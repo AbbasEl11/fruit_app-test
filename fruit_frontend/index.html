@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fruit App</title>
+        <script src="script.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 24px;
+                font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+                background: #f7f7f8;
+                color: #1f2937;
+            }
+
+            .wrap {
+                max-width: 720px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                font-size: 26px;
+                margin-bottom: 12px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background: #fff;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            thead {
+                background: #f3f4f6;
+            }
+
+            th,
+            td {
+                text-align: left;
+                padding: 10px 12px;
+            }
+
+            th {
+                font-weight: 600;
+                font-size: 14px;
+                color: #374151;
+                border-bottom: 1px solid #e5e7eb;
+            }
+
+            tr:nth-child(even) {
+                background: #fafafa;
+            }
+
+            tr:hover {
+                background: #f1f1f1;
+            }
+        </style>
+    </head>
+    <body onload="onload()">
+        <main class="wrap">
+            <h1>Früchte</h1>
+            <section class="card" aria-label="Fruchtliste">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Frucht</th>
+                            <th>Farbe</th>
+                            <th>Gewicht</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fruit-table-rows">
+                        <!-- JS rendert hier -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </body>
+</html>
