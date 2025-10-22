@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@4m0=&_!4gs#_nl!_!87^i3b^30a@pv@93tl3wuv5geh^gl)-='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
@@ -56,7 +56,9 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'fruit_app/templates/',
+                 BASE_DIR / 'core/templates/',
+                 BASE_DIR / "static",],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

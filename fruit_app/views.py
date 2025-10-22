@@ -5,11 +5,19 @@ from django.http import HttpResponse, JsonResponse, HttpResponseNotFound, Http40
 
 
 def send_fruits(request):
-    fruits = [{"name": "Apple", "color": "Green", "weight": "150g"},
-              {"name": "Banana", "color": "Yellow", "weight": "120g"},
-              {"name": "Ananas", "color": "Brown", "weight": "1.5kg"},
-              {"name": "Watermelon", "color": "Green/Red", "weight": "5kg"},
+    fruits = [{"name": "Apfel", "color": "Rot", "weight": "150g", "ordered": False},
+              {"name": "Banane", "color": "Gelb",
+                  "weight": "120g", "ordered": True},
+              {"name": "Kirsche", "color": "Rot",
+                  "weight": "1.5kg", "ordered": True},
+              {"name": "Birne", "color": "Grün",
+                  "weight": "5kg", "ordered": False},
               ]
     if request.method == "GET":
+        return render(request, "fruit_app/fruitlist.html", {"fruits": fruits})
         return JsonResponse(fruits, safe=False)
     raise Http404("fruit not found")
+
+
+def info_fruits(request):
+    return render(request, "fruit_app/info.html")
